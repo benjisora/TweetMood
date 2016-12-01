@@ -1,7 +1,7 @@
 # TweetMood
 TweetMood app offers the user some preprogrammed tweets to post.
 
-The app was reprogrammed in swift code.
+The app was reprogrammed in swift code, by Benjamin Saugues.
 
 ## How does it work ?
 Write your own personal tweet to post on your twitter account; or leave the field empty to send the preset messages and moods available from the picker.
