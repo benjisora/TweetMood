@@ -10,7 +10,7 @@ import UIKit
 import Social
 
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var personalMessage: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -24,10 +24,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        // Do any additional setup after loading the view, typically from a nib.
         self.pickerView.dataSource = self;
         self.pickerView.delegate = self;
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        self.personalMessage.delegate = self;
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +81,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func UserTapGesture(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true);
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true);
+        return false;
     }
     
     // MARK: - TweetSending
